@@ -34,12 +34,12 @@ def top_message():
 top_message()
 #Load trained model
 print("\tLoading model JSON file.")
-json_file = open('model.json', 'r')
+json_file = open('model/model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 print("\tSeting up model.")
 loaded_model = model_from_json(loaded_model_json)
-loaded_model.load_weights("model.h5")
+loaded_model.load_weights("model/model.h5")
 print("\tLoaded model from disk.")
 
 #Compile loaded model
@@ -50,7 +50,7 @@ loaded_model.compile(loss='categorical_crossentropy',
 print("\tModel compiled. ")
 
 #Load words used as features (BoW)
-with open('word_features', 'rb') as f:
+with open('model/word_features', 'rb') as f:
     word_features = pickle.load(f)
     print("\tLoaded features vector from Disk.")
     print("Setup done.\n")
