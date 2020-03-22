@@ -8,11 +8,11 @@ Text classifier: will classify the specified input, that may be a simplesentence
 
 textClassifier.ipynb    ->      Jupyter notebook with all the mandatory tasks.
     Tasks:
-        1. Read the file and prepare the data for text classification (take decisions on how to clean the data,what to do with punctuation signs or special characters, etc.)
+1. Read the file and prepare the data for text classification (take decisions on how to clean the data,what to do with punctuation signs or special characters, etc.)
             Used Spacy to filter out not iconic words (Stop words), punctuation and other symbols.
             Used Pandas to work easily with the data extracted from JSON file ("/model/tech_soft_none.json").
             NOTE: 'none' data is almost as double as 'tech' data and, therefore, it's implied greater misclassification from the last data type.
-        2. Train a classification model that takes a sentence and predicts the class it belongs to. You are free to use any type of model or libraries for this task.
+    2. Train a classification model that takes a sentence and predicts the class it belongs to. You are free to use any type of model or libraries for this task.
             BoW implementation with a 5000 most common words as features (using Spacy).
             Generated feature vectors with contained features for each entry (not qty, just presence).
             Label Encoding assigning numbers instead of class name (could have been omited)
