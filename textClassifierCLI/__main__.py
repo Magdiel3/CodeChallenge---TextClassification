@@ -59,6 +59,9 @@ Classify a single str entry or a JSON formated data with labels
     if (text):
         print(find_features_text(text,word_features,loaded_model)[0])
 
+    #if (fromFile):
+
+
 
 
 #Predict from entry 'doc'
