@@ -7,7 +7,7 @@ Classify a single str entry or a JSON formated data with labels
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for evaluation purposes. If something is not clear or doesn't work, please refer to [me](mailto:magdieltercero@hotmail.com)
 
 ### Prerequisites
 
