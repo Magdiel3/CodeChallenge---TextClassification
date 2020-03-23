@@ -6,7 +6,6 @@ stderr = sys.stderr
 sys.stderr = open(os.devnull, 'w')
 from keras.models import model_from_json
 sys.stderr = stderr
-from sklearn.preprocessing import OneHotEncoder
 import pickle
 from os import system, name 
 import pyperclip
@@ -55,7 +54,7 @@ with open('model/word_features', 'rb') as f:
     print("\tLoaded features vector from Disk.")
     print("Setup done.\n")
 
-#Predit from entry 'doc'
+#Predict from entry 'doc'
 def find_features(doc):
     words = doc
     features = []
