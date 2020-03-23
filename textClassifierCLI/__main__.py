@@ -72,10 +72,18 @@ Classify a single str entry or a JSON formated data with labels
         predRaw = np.argmax(Y,axis=1)
         #print(predRaw[0:10])
         labels = ['none', 'soft', 'tech']
-        predLabelStr = []
-        for pred in predRaw:
-            predLabelStr.append(labels[pred])
-        print(predLabelStr[0:10])            
+        data = {}
+        data['data'] = []
+        for i, pred in enumerate(predRaw):
+            data['data'].append({
+                'text': df['text'][i],
+                'label': labels[pred]
+            })
+
+        with open('output.json', 'w') as outfile:
+            json.dump(data, outfile,indent=4)      
+        print("Generated output.json")    
+
 
 
 
