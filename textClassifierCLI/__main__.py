@@ -39,7 +39,7 @@ Classify a single str entry or a JSON formated data with labels
     args = parser.parse_args()
     fromFile = args.fromFile
     text = args.text
-    path = args.path
+    path = args.path.replace('\\','/')
 
     #Load trained model
     json_file = open('model/model.json', 'r')
@@ -63,6 +63,7 @@ Classify a single str entry or a JSON formated data with labels
 
     if (fromFile):
         #Read and format dataset
+        print("Retrieved from: " + path)
         with open(path, 'r',encoding = 'utf8', errors="ignore") as f:
             data = json.load(f)
         df = pd.DataFrame.from_dict(data["data"])
