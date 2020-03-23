@@ -1,4 +1,4 @@
-# CodeChallenge---TextClassification
+# CodeChallenge - TextClassification
 
 Classify a single str entry or a JSON formated data with labels
   1. soft: for soft skills like 'team player'
@@ -38,7 +38,7 @@ With bash or cmd navigate to the folder where the repo is found on your Computer
 
 Install the packages
 
-```shell
+```sh
 install.sh
 ```
 
@@ -52,7 +52,7 @@ To call the library just perform:
 (base) C:\Users\magdi\OneDrive\Documents\VSCode\Python\Talentbait\CodeChallenge---TextClassification>textClassifierCLI
 ```
 
-For help just ge with ```textClassifierCLI -h```
+For help just ge with ```textClassifierCLI -h``` and you'll get:
 
 ```
 usage: textClassifierCLI [-h] [-s] [-j] [-p]
@@ -72,6 +72,21 @@ optional arguments:
   -p , --path   path to JSON file (may contain labes)
                 default='tech_soft_none.json'
 ```
+
+There are *3* main functionalities:
+1. label a string in prompt
+```
+C:\Users\>textClassifierCLI -s <string_to_classify>
+```
+2. label the DataSet in a generated output file (useless but for development)
+```
+C:\Users\>textClassifierCLI -j
+```
+3. label a json in a generated output file
+```
+C:\Users\>textClassifierCLI -j -p <absolute_path>
+```
+It works as well with a relative path if within folder
 
 ## Authors
 
