@@ -18,7 +18,7 @@ import argparse
 import os
 import sys
 import numpy
-from keras
+import keras
 import pickle
 import pyperclip
 import json
