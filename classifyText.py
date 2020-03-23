@@ -63,8 +63,8 @@ def find_features(doc):
     newData = np.asarray(features).reshape(1,-1)
 
     predLabel = np.zeros(3)
-    predRaw = np.argmax(loaded_model.predict([newData]))
-    predIndex = predRaw
+    predRaw = loaded_model.predict([newData])
+    predIndex = np.argmax(predRaw)
     predLabel[predIndex] = 1
     labels = ['none', 'soft', 'tech']
     predLabel = predLabel.reshape(1,-1)

@@ -10,6 +10,8 @@ sys.stderr = stderr
 import pickle
 from os import system, name 
 import pyperclip
+import json
+import pandas as pd
 
 def main():
     parser = argparse.ArgumentParser(
@@ -57,30 +59,47 @@ Classify a single str entry or a JSON formated data with labels
         word_features = pickle.load(f)
 
     if (text):
-        print(find_features_text(text,word_features,loaded_model)[0])
+        print(find_features_text(text,word_features,loaded_model))
 
-    #if (fromFile):
+    if (fromFile):
+        #Read and format dataset
+        with open(path, 'r',encoding = 'utf8', errors="ignore") as f:
+            data = json.load(f)
+        df = pd.DataFrame.from_dict(data["data"])
+        featuresets = np.array([(find_features(df["text"][index],word_features), df["label"][index]) for index,_ in df.iterrows()])
+        X = np.array([x[0] for x in featuresets[:]])
+        Y = loaded_model.predict(X)
+        predRaw = np.argmax(Y,axis=1)
+        #print(predRaw[0:10])
+        labels = ['none', 'soft', 'tech']
+        predLabelStr = []
+        for pred in predRaw:
+            predLabelStr.append(labels[pred])
+        print(predLabelStr[0:10])            
 
 
 
 
 #Predict from entry 'doc'
 def find_features_text(text,word_features,model):
-    words = text
-    features = []
-    for w in word_features:
-        features.append(1 if (w in words) else 0)
+    features = find_features(text,word_features)
     newData = np.asarray(features).reshape(1,-1)
 
     predLabel = np.zeros(3)
-    predRaw = np.argmax(model.predict([newData]))
-    predIndex = predRaw
+    predIndex = np.argmax(model.predict([newData]))
     predLabel[predIndex] = 1
     labels = ['none', 'soft', 'tech']
     predLabel = predLabel.reshape(1,-1)
     predLabelStr = labels[np.argmax(predLabel)]
 
-    return predLabelStr, predLabel, predRaw
+    return predLabelStr
+
+def find_features(text, word_features):
+    words = text
+    features = []
+    for w in word_features:
+        features.append(1 if (w in words) else 0)
+    return features
 
 if __name__ == '__main__':
     main()
