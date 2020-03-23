@@ -9,7 +9,7 @@ and will output the predictedlabel as follows:
 
 textClassifier.ipynb    ->      Jupyter notebook with all the mandatory tasks.
     Tasks:
-1. Read the file and prepare the data for text classification (take decisions on how to clean the data,what to do with
+    1. Read the file and prepare the data for text classification (take decisions on how to clean the data,what to do with
             punctuation signs or special characters, etc.)
             Used Spacy to filter out not iconic words (Stop words), punctuation and other symbols.
             Used Pandas to work easily with the data extracted from JSON file ("/model/tech_soft_none.json").

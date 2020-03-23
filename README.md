@@ -1,6 +1,9 @@
 # CodeChallenge---TextClassification
 
-One Paragraph of project description goes here
+Classify a single str entry or a JSON formated data with labels
+  1. soft: for soft skills like 'team player'
+  2. tech: for tech skills like'python experience'
+  3. none: for all other type of sentences
 
 ## Getting Started
 
@@ -62,19 +65,10 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Magdiel Martinez** - *Initial work* - [Magdiel3](https://github.com/Magdiel3)
 
 ## License
 
@@ -82,6 +76,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Thanks stackoverflow, python docs, keras docs, and all other documentations
+* Purpose: Apply for an awesome job 
+* Motivation: Learn (I really did) even tough I may not get the Job unu
